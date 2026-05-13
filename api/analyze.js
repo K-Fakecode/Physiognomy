@@ -14,8 +14,8 @@ export default async function handler(req, res) {
     }
 
     try {
-        // ★ 모델 이름을 안정적인 gemini-2.0-flash 로 변경했습니다. ★
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        // ★ 가장 안정적이고 확실하게 작동하는 gemini-1.5-flash 모델로 변경했습니다. ★
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         
         // AI에게 지시할 팩트폭행 관상 프롬프트
         const prompt = `당신은 오랜 경험을 가진 전통 관상학 전문가입니다. 
