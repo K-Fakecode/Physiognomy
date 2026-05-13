@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        // 최신 Gemini 모델 주소 (안정적인 2.0 모델 사용)
+        // ★ 모델 이름을 안정적인 gemini-2.0-flash 로 변경했습니다. ★
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
         
         // AI에게 지시할 팩트폭행 관상 프롬프트
