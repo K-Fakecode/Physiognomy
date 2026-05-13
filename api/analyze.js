@@ -10,14 +10,13 @@ export default async function handler(req, res) {
     const apiKey = process.env.GEMINI_API_KEY; 
 
     if (!apiKey) {
-        return res.status(500).json({ error: '서버에 API 키가 설정되지 않았습니다. Vercel 설정을 확인해주세요.' });
+        return res.status(500).json({ error: '서버에 API 키가 없다냥! Vercel 설정을 확인하라냥!' });
     }
 
     try {
-        // ★ 가장 안정적이고 확실하게 작동하는 gemini-1.5-flash 모델로 변경했습니다. ★
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+        // ★ 구글의 최신 정식 버전인 gemini-2.5-flash 로 변경 완료! ★
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
         
-        // AI에게 지시할 팩트폭행 관상 프롬프트
         const prompt = `당신은 오랜 경험을 가진 전통 관상학 전문가입니다. 
 주어진 얼굴 사진을 보고 다음 3가지 주요 부위와 종합 풀이에 대한 관상 결과를 분석해주세요.
 사진의 얼굴에서 보이는 관상학적 특징을 가감 없이 객관적이고 냉철하게 분석해주세요. 
